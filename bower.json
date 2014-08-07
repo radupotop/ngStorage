@@ -1,0 +1,21 @@
+{
+  "name": "ngStorage",
+  "version": "1.0",
+  "homepage": "https://github.com/wooptoo/ngStorage",
+  "authors": [
+    "Radu Potop <radu.potop@wooptoo.com>"
+  ],
+  "description": "A simple localStorage wrapper for AngularJS.",
+  "main": "storage.js",
+  "keywords": [
+    "localStorage"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
