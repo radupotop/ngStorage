@@ -16,7 +16,7 @@ Storage.service('storage', function() {
         try {
             return localStorage.setItem(key, angular.toJson(value));
         } catch (e) {
-            throw new Error('Storage set error for key <'+key+'> value <'+value+'>');
+            throw new Error('Storage set error for key: ' + key);
         }
     };
     
@@ -27,7 +27,7 @@ Storage.service('storage', function() {
         try {
             return angular.fromJson(localStorage.getItem(key));
         } catch (e) {
-            throw new Error('Storage get error for key <'+key+'>');
+            throw new Error('Storage get error for key: ' + key);
         }
     };
     
