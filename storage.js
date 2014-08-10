@@ -1,10 +1,8 @@
-var Storage = angular.module('Storage', []);
-
 /**
  * Storage service.
  * Store data in localStorage serialized as JSON.
  */
-Storage.service('storage', function() {
+angular.module('ngStorage', []).service('storage', function() {
     
     var API = {};
     var version = 1;
