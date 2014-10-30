@@ -3,47 +3,53 @@
  * Store data in localStorage serialized as JSON.
  */
 angular.module('ngStorage', []).service('storage', function() {
-    
-    var API = {};
+
     var version = 1;
-    
+
     /**
      * Set value
      */
-    API.set = function(key, value) {
+    function set(key, value) {
         try {
             return localStorage.setItem(key, angular.toJson(value));
         } catch (e) {
             throw new Error('Storage set error for key: ' + key);
         }
-    };
-    
+    }
+
     /**
      * Get value
      */
-    API.get = function(key) {
+    function get(key) {
         try {
             return angular.fromJson(localStorage.getItem(key));
         } catch (e) {
             throw new Error('Storage get error for key: ' + key);
         }
-    };
-    
+    }
+
     /**
      * Remove value
      */
-    API.remove = function(key) {
+    function remove(key) {
         return localStorage.removeItem(key);
-    };
-    
+    }
+
     /**
      * Clear storage in old format
      */
-    if(API.get('v') !== version) {
+    if(get('v') !== version) {
         localStorage.clear();
-        API.set('v', version);
+        set('v', version);
     }
-    
-    return API;
-    
+
+    /**
+     * Expose public API
+     */
+    return {
+        get: get,
+        set: set,
+        remove: remove
+    };
+
 });
