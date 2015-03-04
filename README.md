@@ -13,5 +13,5 @@ Usage:
     storage.remove('key');
 
 
-Author: Radu Potop
+Author: Radu Potop  
 License: MIT
